@@ -122,13 +122,13 @@ CREATE TABLE `arquivos` (
   `a_nome` varchar(100) NOT NULL COMMENT 'Nome do Arquivo',
   `a_descricao` varchar(255) DEFAULT NULL,
   `a_hash` varchar(80) NOT NULL,
+  `a_type` varchar(80) DEFAULT NULL,
   `userId` int(10) NOT NULL DEFAULT '-1' COMMENT 'Usuário que cadastrou ou alterou',
   `modifiedByUserId` int(10) NOT NULL DEFAULT '-1',
   `created` date DEFAULT NULL COMMENT 'Data Criação',
   `modified` date DEFAULT NULL COMMENT 'Data Modificação',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `a_nome_UNIQUE` (`a_nome`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Aqui aramazenaremos as arquivos que serão importados.\nAinda ';
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COMMENT='Aqui aramazenaremos as arquivos que serão importados.\nAinda ';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -138,6 +138,7 @@ CREATE TABLE `arquivos` (
 
 LOCK TABLES `arquivos` WRITE;
 /*!40000 ALTER TABLE `arquivos` DISABLE KEYS */;
+INSERT INTO `arquivos` VALUES (7,'bce4da5f-ef56-11e3-8f55-50b7c33c01a6','arq 1','arq 1','/files/projetos/bcd78fc9-ef56-11e3-8f55-50b7c33c01a6','arquivo_11.png','arq 1','6ba14ae5cbaa40350f180cd53f1355ee','image/png',-1,-1,'2014-06-08','2014-06-08'),(8,'bced1c3e-ef56-11e3-8f55-50b7c33c01a6','arq 2','arq 2','/files/projetos/bcd78fc9-ef56-11e3-8f55-50b7c33c01a6','arquivo_22.png','arq 2','75c13c7176cc549c86b6f1c2648f29e0','image/png',-1,-1,'2014-06-08','2014-06-08'),(9,'bcfaae73-ef56-11e3-8f55-50b7c33c01a6','arq 3','arq 3','/files/projetos/bcd78fc9-ef56-11e3-8f55-50b7c33c01a6','arquivo_33.png','arq 3','2c3efceb155a9de5173679e2f2d5b0a6','image/png',-1,-1,'2014-06-08','2014-06-08'),(11,'747dcc52-ef6d-11e3-8f55-50b7c33c01a6','arq 1','arq 1;arquivo_1.png','/files/projetos/741d864c-ef6d-11e3-8f55-50b7c33c01a6','arquivo_12.png','arq 1','6ba14ae5cbaa40350f180cd53f1355ee','image/png',-1,-1,'2014-06-08','2014-06-08'),(13,'373c0d8f-ef72-11e3-8f55-50b7c33c01a6','arq 1','arq 1;arquivo_1.png','/files/projetos/372d3854-ef72-11e3-8f55-50b7c33c01a6','arquivo_13.png','arq 1','6ba14ae5cbaa40350f180cd53f1355ee','image/png',-1,-1,'2014-06-08','2014-06-08'),(14,'6f66cbc6-ef72-11e3-8f55-50b7c33c01a6','arq 1','arq 1;arquivo_1.png','/files/projetos/6f5880a9-ef72-11e3-8f55-50b7c33c01a6','arquivo_14.png','arq 1','6ba14ae5cbaa40350f180cd53f1355ee','image/png',-1,-1,'2014-06-08','2014-06-08'),(15,'a5f9ac30-ef72-11e3-8f55-50b7c33c01a6','arq 1','arq 1;arquivo_1.png','/files/projetos/a5ceba31-ef72-11e3-8f55-50b7c33c01a6','arquivo_15.png','arq 1','6ba14ae5cbaa40350f180cd53f1355ee','image/png',-1,-1,'2014-06-08','2014-06-08'),(16,'facdaca7-ef74-11e3-8f55-50b7c33c01a6','a1','a1;arquivo_1.png','/files/projetos/fabb575a-ef74-11e3-8f55-50b7c33c01a6','arquivo_10.png','a1','6ba14ae5cbaa40350f180cd53f1355ee','image/png',-1,-1,'2014-06-08','2014-06-08'),(17,'fae3f63e-ef74-11e3-8f55-50b7c33c01a6','a2','a2;arquivo_2.png','/files/projetos/fabb575a-ef74-11e3-8f55-50b7c33c01a6','arquivo_20.png','a2','75c13c7176cc549c86b6f1c2648f29e0','image/png',-1,-1,'2014-06-08','2014-06-08'),(18,'faf4f559-ef74-11e3-8f55-50b7c33c01a6','a3','a3;arquivo_3.png','/files/projetos/fabb575a-ef74-11e3-8f55-50b7c33c01a6','arquivo_30.png','a3','2c3efceb155a9de5173679e2f2d5b0a6','image/png',-1,-1,'2014-06-08','2014-06-08'),(19,'4e18a43f-ef75-11e3-8f55-50b7c33c01a6','a1','a1;arquivo_1.png','/files/projetos/4e0bf6ba-ef75-11e3-8f55-50b7c33c01a6','arquivo_1.png','a1','6ba14ae5cbaa40350f180cd53f1355ee','image/png',-1,-1,'2014-06-08','2014-06-08'),(20,'4e2e4fa5-ef75-11e3-8f55-50b7c33c01a6','a2','a2;arquivo_2.png','/files/projetos/4e0bf6ba-ef75-11e3-8f55-50b7c33c01a6','arquivo_2.png','a2','75c13c7176cc549c86b6f1c2648f29e0','image/png',-1,-1,'2014-06-08','2014-06-08'),(21,'4e3f57ab-ef75-11e3-8f55-50b7c33c01a6','a3','a3;arquivo_3.png','/files/projetos/4e0bf6ba-ef75-11e3-8f55-50b7c33c01a6','arquivo_3.png','a3','2c3efceb155a9de5173679e2f2d5b0a6','image/png',-1,-1,'2014-06-08','2014-06-08'),(22,'1c2bda1d-ef76-11e3-8f55-50b7c33c01a6','a1','a1;arquivo_1.png','/files/projetos/1c20857a-ef76-11e3-8f55-50b7c33c01a6','arquivo_1.png','a1','6ba14ae5cbaa40350f180cd53f1355ee','image/png',-1,-1,'2014-06-08','2014-06-08'),(23,'1c4a523b-ef76-11e3-8f55-50b7c33c01a6','a2','a2;arquivo_2.png','/files/projetos/1c20857a-ef76-11e3-8f55-50b7c33c01a6','arquivo_2.png','a2','75c13c7176cc549c86b6f1c2648f29e0','image/png',-1,-1,'2014-06-08','2014-06-08'),(24,'1c6c70e0-ef76-11e3-8f55-50b7c33c01a6','a3','a3;arquivo_3.png','/files/projetos/1c20857a-ef76-11e3-8f55-50b7c33c01a6','arquivo_3.png','a3','2c3efceb155a9de5173679e2f2d5b0a6','image/png',-1,-1,'2014-06-08','2014-06-08'),(25,'56d390b1-efe6-11e3-8f55-50b7c33c01a6','arq 1','arq 1;arquivo_1.png','/files/projetos/5675146f-efe6-11e3-8f55-50b7c33c01a6','arquivo_1.png','arquivo 1','6ba14ae5cbaa40350f180cd53f1355ee','image/png',-1,-1,'2014-06-09','2014-06-09'),(26,'56f4e7e2-efe6-11e3-8f55-50b7c33c01a6','arq 2','arq 2;arquivo_2.png','/files/projetos/5675146f-efe6-11e3-8f55-50b7c33c01a6','arquivo_2.png','arquivo 2','75c13c7176cc549c86b6f1c2648f29e0','image/png',-1,-1,'2014-06-09','2014-06-09'),(27,'571a6429-efe6-11e3-8f55-50b7c33c01a6','arq 3','arq 3;arquivo_3.png','/files/projetos/5675146f-efe6-11e3-8f55-50b7c33c01a6','arquivo_3.png','arquivo 3','2c3efceb155a9de5173679e2f2d5b0a6','image/png',-1,-1,'2014-06-09','2014-06-09'),(28,'52a65eaf-efe9-11e3-8f55-50b7c33c01a6','arq 1','arq 1;arquivo_1.png','/files/projetos/51ba616a-efe9-11e3-8f55-50b7c33c01a6','arquivo_1.png','arquivo 1','6ba14ae5cbaa40350f180cd53f1355ee','image/png',-1,-1,'2014-06-09','2014-06-09'),(29,'52f10ffa-efe9-11e3-8f55-50b7c33c01a6','arq 2','arq 2;arquivo_2.png','/files/projetos/51ba616a-efe9-11e3-8f55-50b7c33c01a6','arquivo_2.png','arquivo 2','75c13c7176cc549c86b6f1c2648f29e0','image/png',-1,-1,'2014-06-09','2014-06-09'),(30,'5336dd15-efe9-11e3-8f55-50b7c33c01a6','arq 3','arq 3;arquivo_3.png','/files/projetos/51ba616a-efe9-11e3-8f55-50b7c33c01a6','arquivo_3.png','arquivo 3','2c3efceb155a9de5173679e2f2d5b0a6','image/png',-1,-1,'2014-06-09','2014-06-09');
 /*!40000 ALTER TABLE `arquivos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -450,7 +451,7 @@ CREATE TABLE `projetos` (
   `modified` datetime DEFAULT NULL COMMENT 'Data Criação',
   PRIMARY KEY (`id`),
   KEY `projetos_1_idx` (`nome_projeto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -460,6 +461,7 @@ CREATE TABLE `projetos` (
 
 LOCK TABLES `projetos` WRITE;
 /*!40000 ALTER TABLE `projetos` DISABLE KEYS */;
+INSERT INTO `projetos` VALUES (43,'bcd78fc9-ef56-11e3-8f55-50b7c33c01a6','Gravar arquivos',0x50726F6A65746F207465737461646F206F206772617661C3A7C3A36F20646F73206172717569766F732E,'2014-01-30','2014-04-24','Paulo Ségio',-1,-1,'2014-06-08 18:49:16','2014-06-08 18:49:16'),(44,'e40f044f-ef6b-11e3-8f55-50b7c33c01a6','Gravar arquivos',0x50726F6A65746F207465737461646F206F206772617661C3A7C3A36F20646F73206172717569766F732E,'2014-01-30','2014-04-24','Paulo Ségio',-1,-1,'2014-06-08 21:20:41','2014-06-08 21:20:41'),(45,'741d864c-ef6d-11e3-8f55-50b7c33c01a6','Gravar arquivos',0x50726F6A65746F207465737461646F206F206772617661C3A7C3A36F20646F73206172717569766F732E,'2014-01-30','2014-04-24','Paulo Ségio',-1,-1,'2014-06-08 21:31:52','2014-06-08 21:31:52'),(46,'213f5eaf-ef72-11e3-8f55-50b7c33c01a6','Gravar arquivos',0x50726F6A65746F207465737461646F206F206772617661C3A7C3A36F20646F73206172717569766F732E,'2014-01-30','2014-04-24','Paulo Ségio',-1,-1,'2014-06-08 22:05:21','2014-06-08 22:05:21'),(47,'372d3854-ef72-11e3-8f55-50b7c33c01a6','Gravar arquivos',0x50726F6A65746F207465737461646F206F206772617661C3A7C3A36F20646F73206172717569766F732E,'2014-01-30','2014-04-24','Paulo Ségio',-1,-1,'2014-06-08 22:05:58','2014-06-08 22:05:58'),(48,'6f5880a9-ef72-11e3-8f55-50b7c33c01a6','Gravar arquivos',0x50726F6A65746F207465737461646F206F206772617661C3A7C3A36F20646F73206172717569766F732E,'2014-01-30','2014-04-24','Paulo Ségio',-1,-1,'2014-06-08 22:07:32','2014-06-08 22:07:32'),(49,'a5ceba31-ef72-11e3-8f55-50b7c33c01a6','Gravar arquivos',0x50726F6A65746F207465737461646F206F206772617661C3A7C3A36F20646F73206172717569766F732E,'2014-01-30','2014-04-24','Paulo Ségio',-1,-1,'2014-06-08 22:09:03','2014-06-08 22:09:03'),(50,'fabb575a-ef74-11e3-8f55-50b7c33c01a6','testando o cadastro 1',0x6573746F752074657374616E646F206F20636164617374726F2064612072656C61C3A7C3A36F20656E7472652070726F6A65746F2065206F73206172717569766F732E,'2014-01-30','2014-03-31','paulo',-1,-1,'2014-06-08 22:25:45','2014-06-09 18:52:57'),(51,'4e0bf6ba-ef75-11e3-8f55-50b7c33c01a6','testando o cadastro 1',0x6573746F752074657374616E646F206F20636164617374726F2064612072656C61C3A7C3A36F20656E7472652070726F6A65746F2065206F73206172717569766F732E,'2014-01-30','2014-03-31','paulo',-1,-1,'2014-06-08 22:28:05','2014-06-08 22:28:05'),(52,'1c20857a-ef76-11e3-8f55-50b7c33c01a6','testando o cadastro 1',0x6573746F752074657374616E646F206F20636164617374726F2064612072656C61C3A7C3A36F20656E7472652070726F6A65746F2065206F73206172717569766F732E,'2014-01-30','2014-03-31','paulo',-1,-1,'2014-06-08 22:33:50','2014-06-08 22:33:50'),(53,'5675146f-efe6-11e3-8f55-50b7c33c01a6','paulo sergio 1',0x54455354414E444F2041532044415441532E,'0000-00-00','0000-00-00','paulo sérgio',-1,-1,'2014-06-09 11:57:12','2014-06-09 11:57:12'),(54,'51ba616a-efe9-11e3-8f55-50b7c33c01a6','paulo sergio 1',0x54455354414E444F2041532044415441532E,'2014-01-01','2014-01-08','paulo sérgio',-1,-1,'2014-06-09 12:18:32','2014-06-09 12:18:32'),(55,'34c2a36b-efea-11e3-8f55-50b7c33c01a6','paulo sergio 1',0x54455354414E444F2041532044415441532E,'2014-01-01','1969-12-31','paulo sérgio',-1,-1,'2014-06-09 12:24:53','2014-06-09 12:24:53'),(56,'902cd8fe-efea-11e3-8f55-50b7c33c01a6','paulo sergio 1',0x54455354414E444F2041532044415441532E,'2014-01-01','1969-12-31','paulo sérgio',-1,-1,'2014-06-09 12:27:27','2014-06-09 12:27:27');
 /*!40000 ALTER TABLE `projetos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -528,7 +530,7 @@ CREATE TABLE `projetos_arquivos` (
   KEY `fk_projetos_arquivos_2_idx` (`arquivo_id`),
   CONSTRAINT `fk_projetos_arquivos_1` FOREIGN KEY (`projeto_id`) REFERENCES `projetos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_projetos_arquivos_2` FOREIGN KEY (`arquivo_id`) REFERENCES `arquivos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -538,6 +540,7 @@ CREATE TABLE `projetos_arquivos` (
 
 LOCK TABLES `projetos_arquivos` WRITE;
 /*!40000 ALTER TABLE `projetos_arquivos` DISABLE KEYS */;
+INSERT INTO `projetos_arquivos` VALUES (4,'4e245f0a-ef75-11e3-8f55-50b7c33c01a6',51,19,-1,-1,'2014-06-08 22:28:05','2014-06-08 22:28:05'),(5,'4e355560-ef75-11e3-8f55-50b7c33c01a6',51,20,-1,-1,'2014-06-08 22:28:05','2014-06-08 22:28:05'),(6,'4e4647b3-ef75-11e3-8f55-50b7c33c01a6',51,21,-1,-1,'2014-06-08 22:28:05','2014-06-08 22:28:05'),(7,'1c3b3310-ef76-11e3-8f55-50b7c33c01a6',52,22,-1,-1,'2014-06-08 22:33:51','2014-06-08 22:33:51'),(8,'1c5d4f59-ef76-11e3-8f55-50b7c33c01a6',52,23,-1,-1,'2014-06-08 22:33:51','2014-06-08 22:33:51'),(9,'1c7a531e-ef76-11e3-8f55-50b7c33c01a6',52,24,-1,-1,'2014-06-08 22:33:51','2014-06-08 22:33:51'),(10,'56eaa596-efe6-11e3-8f55-50b7c33c01a6',53,25,-1,-1,'2014-06-09 11:57:13','2014-06-09 11:57:13'),(11,'5700f72f-efe6-11e3-8f55-50b7c33c01a6',53,26,-1,-1,'2014-06-09 11:57:13','2014-06-09 11:57:13'),(12,'5732622d-efe6-11e3-8f55-50b7c33c01a6',53,27,-1,-1,'2014-06-09 11:57:13','2014-06-09 11:57:13'),(13,'52d036c6-efe9-11e3-8f55-50b7c33c01a6',54,28,-1,-1,'2014-06-09 12:18:34','2014-06-09 12:18:34'),(14,'530ac356-efe9-11e3-8f55-50b7c33c01a6',54,29,-1,-1,'2014-06-09 12:18:35','2014-06-09 12:18:35'),(15,'534b3be5-efe9-11e3-8f55-50b7c33c01a6',54,30,-1,-1,'2014-06-09 12:18:35','2014-06-09 12:18:35');
 /*!40000 ALTER TABLE `projetos_arquivos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -680,4 +683,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-06-07  7:24:49
+-- Dump completed on 2014-06-09 20:02:09
